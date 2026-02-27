@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tirthraj Boda - Graphical Resume</title>
+    <!-- Importing Inter Font and Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+    
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --tile: #ffffff;
+            --accent: #6366f1;
+            --grad: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            margin: 0;
+            padding: 40px 20px;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        /* Tile Base */
+        .tile {
+            background: var(--tile);
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 10px 15px -3px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        /* Header Tile */
+        .header-tile {
+            grid-column: span 2;
+            background: var(--grad);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .header-tile h1 { margin: 0; font-size: 2.4rem; font-weight: 700; }
+        .header-tile p { margin: 5px 0 0; opacity: 0.9; font-weight: 500; }
+
+        /* Contact Tile with Symbols */
+        .contact-tile {
+            grid-column: span 1;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .icon-circle {
+            width: 40px;
+            height: 40px;
+            background: #f1f5f9;
+            color: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .contact-item:hover .icon-circle {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Section Headings */
+        h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Experience Items */
+        .exp-item { margin-bottom: 20px; }
+        .exp-item h3 { margin: 0; font-size: 1.1rem; }
+        .exp-item span { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+        .exp-item p { color: var(--text-light); font-size: 0.9rem; margin: 8px 0; }
+
+        /* Skill Tags */
+        .skill-group { display: flex; flex-wrap: wrap; gap: 8px; }
+        .skill-tag {
+            background: #eef2ff;
+            color: #4338ca;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 850px) {
+            .container { grid-template-columns: 1fr; }
+            .header-tile { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Tile -->
+    <div class="tile header-tile">
+        <div style="font-size: 3.5rem;"><i class="fa-solid fa-user-astronaut"></i></div>
+        <div>
+            <h1>Tirthraj Boda</h1>
+            <p>Full Stack Engineer & Web Architect</p>
+        </div>
+    </div>
+
+    <!-- Contact Tile (Now with Icons) -->
+    <div class="tile contact-tile">
+        <h2>Connect</h2>
+        <div class="contact-list">
+            <a href="mailto:tirthrajboda@gmail.com" class="contact-item">
+                <div class="icon-circle"><i class="fa-solid fa-envelope"></i></div>
+                <span>tirthrajboda@gmail.com</span>
+            </a>
+            <a href="tel:+919921632992" class="contact-item">
+                <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
+                <span>+91 9921632992</span>
+            </a>
+            <div class="contact-item">
+                <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+                <span>Pune, India</span>
+            </div>
+            <a href="#" class="contact-item">
+                <div class="icon-circle"><i class="fa-brands fa-linkedin"></i></div>
+                <span>LinkedIn Profile</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Experience Tile -->
+    <div class="tile" style="grid-column: span 2;">
+        <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
+        <div class="exp-item">
+            <h3>Senior Developer — Tech Corp <span>2020 - Present</span></h3>
+            <p>Led development of high-traffic web applications and managed cloud infrastructure on AWS.</p>
+        </div>
+        <div class="exp-item">
+            <h3>Web Designer — Creative Studio <span>2018 - 2020</span></h3>
+            <p>Created interactive UI components and maintained responsive design across all platforms.</p>
+        </div>
+    </div>
+
+    <!-- Skills Tile -->
+    <div class="tile">
+        <h2><i class="fa-solid fa-gears"></i> Tech Stack</h2>
+        <div class="skill-group">
+            <div class="skill-tag">HTML5</div>
+            <div class="skill-tag">CSS3</div>
+            <div class="skill-tag">JavaScript</div>
+            <div class="skill-tag">React</div>
+            <div class="skill-tag">Node.js</div>
+            <div class="skill-tag">Python</div>
+        </div>
+    </div>
+
+    <!-- Education Tile -->
+    <div class="tile">
+        <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+        <div class="exp-item">
+            <h3>B.Sc. Computer Science</h3>
+            <p>University of Pune, MH</p>
+        </div>
+    </div>
+
+    <!-- Summary Tile -->
+    <div class="tile">
+        <h2><i class="fa-solid fa-circle-info"></i> About Me</h2>
+        <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6;">
+            Passionate about creating seamless digital experiences. Specializing in clean code and modern aesthetics.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
